@@ -4,18 +4,20 @@ import {
   setVoting,
   setQuotes,
   setQuotesCount,
-  setTags
-} from '../redux/slices';
-import voteEnum from '../infrastructure/repository/quote/enums';
+  setTags,
+} from "../redux/slices";
+import voteEnum from "../infrastructure/repository/quote/enums";
 import {
   castDownvote,
   castUpvote,
   getQuotesNoParams,
   getQuotesWithParams,
   deleteDownvote,
-  deleteUpvote
-} from '../infrastructure/repository/quote';
-import { getAllTags } from '../infrastructure/repository/tag';
+  deleteUpvote,
+} from "../infrastructure/repository/quote";
+import { getAllTags } from "../infrastructure/repository/tag";
+
+const filePath = "ShareKnowledge/front/src/pages/home/reduxThunk/actions.js/";
 
 export const votingAction =
   (newVote, oldVote, id) => async (dispatch, getState) => {
@@ -79,13 +81,14 @@ export const loadPageWithPaginationAndTags =
         pageSize,
         chosenTags
       );
-
       const { tags } = await getAllTags();
       dispatch(setTags(tags));
       dispatch(setQuotesCount(quotesCount));
       dispatch(setQuotes(quotesMap));
     } catch (err) {
-      dispatch(handleError(err.message));
+      dispatch(
+        handleError(filePath + "loadPageWithPaginationAndTags \n" + err.message)
+      );
     } finally {
       dispatch(loading(false));
     }

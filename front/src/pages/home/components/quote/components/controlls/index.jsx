@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import styles from './styles.module.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { percentageStyle, arrowStyle } from './styles';
 import voteEnum from '../../../../infrastructure/repository/quote/enums';
 import { votingAction } from '../../../../reduxThunk/actions';
@@ -32,7 +32,7 @@ const Controlls = ({ id, downvotesCount, upvotesCount, givenVote }) => {
 
   const viewToRender = (
     <div className={styles.container}>
-      <FontAwesomeIcon
+      {/* <FontAwesomeIcon
         icon={faCaretUp}
         style={arrowStyle(givenVote, voteEnum.upvote)}
         onClick={() => handleVoting(voteEnum.upvote)}
@@ -49,7 +49,7 @@ const Controlls = ({ id, downvotesCount, upvotesCount, givenVote }) => {
         icon={faCaretDown}
         style={arrowStyle(givenVote, voteEnum.downvote)}
         onClick={() => handleVoting(voteEnum.downvote)}
-      />
+      /> */}
     </div>
   );
 

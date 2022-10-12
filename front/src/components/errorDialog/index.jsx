@@ -21,11 +21,15 @@ export default function ResponsiveDialog(props) {
     };
   }, [dispatch, handleError]);
 
+  console.log((JSON.parse(error)).stack)
+
   return (
-    <Dialog fullScreen={false} open={true} onClose={handleClose}>
+    <Dialog open={true} onClose={handleClose}>
       <DialogTitle>Error</DialogTitle>
-      <DialogContent>
-        <DialogContentText>{error}</DialogContentText>
+      <DialogContent >
+        <DialogContentText style={{whiteSpace: 'break-spaces'}}>
+          {`${(JSON.parse(error)).message}\nFor more details open developer tools.`}
+        </DialogContentText>
       </DialogContent>
       <DialogActions>
         <Button autoFocus onClick={handleClose} color="primary">

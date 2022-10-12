@@ -1,21 +1,21 @@
-import { initialState } from './state';
-import state from './state';
-import { createSlice } from '@reduxjs/toolkit';
+import { initialState } from "./state";
+import state from "./state";
+import { createSlice } from "@reduxjs/toolkit";
 
 const appSlice = createSlice({
-  name: 'app',
+  name: "app",
   initialState: state,
   reducers: {
     loading: (state, action) => {
       return {
         ...state,
-        loading: action.payload
+        loading: action.payload,
       };
     },
     handleError: (state, action) => {
       return {
         ...state,
-        error: action.payload
+        error: action.payload,
       };
     },
     setUser: (state, action) => {
@@ -23,7 +23,7 @@ const appSlice = createSlice({
         ...state,
         token: action.payload.token,
         role: action.payload.role,
-        loggedIn: action.payload.loggedIn
+        loggedIn: action.payload.loggedIn,
       };
     },
     clearUser: (state, action) => {
@@ -31,10 +31,10 @@ const appSlice = createSlice({
         ...state,
         token: initialState.token,
         role: initialState.role,
-        loggedIn: false
+        loggedIn: false,
       };
-    }
-  }
+    },
+  },
 });
 
 export const { loading, handleError, setUser, clearUser } = appSlice.actions;

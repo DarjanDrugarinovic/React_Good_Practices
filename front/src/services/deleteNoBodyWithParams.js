@@ -1,13 +1,13 @@
 const service = async (url) => {
-  const bearer = 'Bearer ' + JSON.parse(localStorage.getItem('app')).token;
+  const bearer = "Bearer " + JSON.parse(localStorage.getItem("app")).token;
 
   return fetch(url, {
-    method: 'DELETE',
+    method: "DELETE",
     headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-      Authorization: bearer
-    }
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: bearer,
+    },
   })
     .then(async (response) => {
       const res = await response.json();
@@ -19,7 +19,7 @@ const service = async (url) => {
       return res;
     })
     .catch((err) => {
-      console.log(err + ': ' + url);
+      console.log(err + ": " + url);
       throw err;
     });
 };
