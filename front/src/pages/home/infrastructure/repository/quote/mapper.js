@@ -1,6 +1,3 @@
-const filePath =
-  "ShareKnowledge/front/src/pages/home/infrastructure/repository/quote/mapper.js";
-
 export const mapperQuoteDTOViewModel = (dto) => {
   const {
     id,
@@ -11,7 +8,7 @@ export const mapperQuoteDTOViewModel = (dto) => {
     upvotesCount,
     downvotesCount,
     createdAt,
-    givenVote,
+    givenVote
   } = dto;
   return {
     id,
@@ -22,7 +19,7 @@ export const mapperQuoteDTOViewModel = (dto) => {
     upvotesCount,
     downvotesCount,
     createdAt,
-    givenVote,
+    givenVote
   };
 };
 
@@ -36,7 +33,7 @@ export const mapperQuoteViewModelDTO = (model) => {
     upvotesCount,
     downvotesCount,
     createdAt,
-    givenVote,
+    givenVote
   } = model;
   return {
     id,
@@ -47,7 +44,7 @@ export const mapperQuoteViewModelDTO = (model) => {
     upvotesCount,
     downvotesCount,
     createdAt,
-    givenVote,
+    givenVote
   };
 };
 
@@ -57,7 +54,7 @@ export const mapperQuotesDTOViewModel = (dto) => {
 
   return {
     quotesCount,
-    quotesMap,
+    quotesMap
   };
 };
 
@@ -67,7 +64,7 @@ export const mapperQuotesViewModelDTO = (model) => {
 
   return {
     quotesCount,
-    quotesMap,
+    quotesMap
   };
 };
 
@@ -81,8 +78,8 @@ export const mapperCreateQuoteDTOViewModel = (dto) => {
     userId: 0,
     upvotesCount: 0,
     downvotesCount: 0,
-    createdAt: "",
-    givenVote: "",
+    createdAt: '',
+    givenVote: ''
   };
 };
 
@@ -91,6 +88,6 @@ export const mapperQuoteViewModelCreateQuoteDTO = (model) => {
   return {
     content,
     author,
-    tags,
+    tags
   };
 };

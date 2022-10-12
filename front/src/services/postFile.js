@@ -1,26 +1,18 @@
+import axios from 'axios';
+
 const service = async (url, DTO) => {
   const bearer = 'Bearer ' + JSON.parse(localStorage.getItem('app')).token;
-
-  return fetch(url, {
-    method: 'POST',
-    body: DTO,
-    headers: {
-      Authorization: bearer
-    }
-  })
-    .then(async (response) => {
-      const res = await response.json();
-
-      if (!response.ok) {
-        throw new Error(res.message);
+  try {
+    const res = await axios.post(url, {
+      body: DTO,
+      headers: {
+        Authorization: bearer
       }
-
-      return res;
-    })
-    .catch((err) => {
-      console.log(err + ': ' + url);
-      throw err;
     });
+    return res.data;
+  } catch (error) {
+    throw new Error(error);
+  }
 };
 
 export default service;

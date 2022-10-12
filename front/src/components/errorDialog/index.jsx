@@ -11,6 +11,15 @@ export default function ResponsiveDialog(props) {
   const { error, handleError } = props;
   const dispatch = useDispatch();
 
+  function isJsonString(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+  }
+
   const handleClose = () => {
     dispatch(handleError(null));
   };
@@ -21,14 +30,17 @@ export default function ResponsiveDialog(props) {
     };
   }, [dispatch, handleError]);
 
-  console.log((JSON.parse(error)).stack)
+  if(isJsonString(error))
+    console.log((JSON.parse(error)).stack) 
+  else
+    console.log(error) 
 
   return (
     <Dialog open={true} onClose={handleClose}>
       <DialogTitle>Error</DialogTitle>
       <DialogContent >
         <DialogContentText style={{whiteSpace: 'break-spaces'}}>
-          {`${(JSON.parse(error)).message}\nFor more details open developer tools.`}
+          {isJsonString(error) ? `${(JSON.parse(error)).message}\nFor more details open developer tools.` : error.toString()}
         </DialogContentText>
       </DialogContent>
       <DialogActions>

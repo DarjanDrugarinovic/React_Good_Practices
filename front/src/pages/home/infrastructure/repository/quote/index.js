@@ -4,9 +4,9 @@ import {
   castUpvoteDataSource,
   deleteUpvoteDataSource,
   castDownvoteDataSource,
-  deleteDownvoteDataSource,
-} from "../../datasource/quote";
-import { mapperQuoteDTOViewModel, mapperQuotesDTOViewModel } from "./mapper";
+  deleteDownvoteDataSource
+} from '../../datasource/quote';
+import { mapperQuoteDTOViewModel, mapperQuotesDTOViewModel } from './mapper';
 
 export const getQuotesNoParams = async () => {
   const dto = await getQuotesNoParamsDataSource();
@@ -16,7 +16,7 @@ export const getQuotesNoParams = async () => {
 export const getQuotesWithParams = async (page, pageSize, chosenTags) => {
   const paramsDTO = {
     page,
-    pageSize,
+    pageSize
   };
 
   if (chosenTags.length > 0) paramsDTO.tags = chosenTags;
