@@ -1,0 +1,4 @@
+const userDTO = {
+  token: '',
+  uloga: ''
+};

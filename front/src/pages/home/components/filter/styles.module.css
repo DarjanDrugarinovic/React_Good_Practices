@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-bottom: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.select {
+  width: 200px;
+  margin-bottom: 5px;
+}
+
+.heading {
+  font-size: x-large;
+}
+
+.controlls {
+  display: flex;
+  justify-content: space-evenly;
+  width: 200px;
+}

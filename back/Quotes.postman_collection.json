@@ -1,0 +1,170 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Quotes",
+		"_postman_id": "0be73275-3706-cc8f-ee2d-a344fbea466b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all tags",
+			"request": {
+				"url": "http://localhost:3000/tags",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get quotes (no params)",
+			"request": {
+				"url": "http://localhost:3000/quotes",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get quotes (sort and filter)",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3000/quotes?tags=life,science&page=1&pageSize=1&sortBy=author&sortDirection=asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quotes"
+					],
+					"query": [
+						{
+							"key": "tags",
+							"value": "life,science"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "1"
+						},
+						{
+							"key": "sortBy",
+							"value": "author"
+						},
+						{
+							"key": "sortDirection",
+							"value": "asc"
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get single quote",
+			"request": {
+				"url": "http://localhost:3000/quotes/147dc7ad-e752-4f7c-9d4d-1bf41153001e",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create quote",
+			"request": {
+				"url": "http://localhost:3000/quotes",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\": \"asdf\",\n    \"author\": \"asdf\",\n    \"tags\": [\"a\", \"s\", \"d\", \"f\"]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Cast upvote",
+			"request": {
+				"url": "http://localhost:3000/quotes/147dc7ad-e752-4f7c-9d4d-1bf41153001e/upvote",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete upvote",
+			"request": {
+				"url": "http://localhost:3000/quotes/147dc7ad-e752-4f7c-9d4d-1bf41153001e/upvote",
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Cast downvote",
+			"request": {
+				"url": "http://localhost:3000/quotes/147dc7ad-e752-4f7c-9d4d-1bf41153001e/downvote",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete downvote",
+			"request": {
+				"url": "http://localhost:3000/quotes/147dc7ad-e752-4f7c-9d4d-1bf41153001e/downvote",
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
