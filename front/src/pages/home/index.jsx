@@ -47,9 +47,9 @@ const Home = () => {
     }
   }, [dispatch, currentPage, quotesPerPage, chosenTags, prevChosenTags]);
 
-  useEffect(() => {
-    localStorage.setItem('home', JSON.stringify(home));
-  }, [home]);
+  // useEffect(() => {
+  //   localStorage.setItem('home', JSON.stringify(home));
+  // }, [home]);
 
   const viewToRender = (
     <>
@@ -70,6 +70,7 @@ const Home = () => {
       {error ? <ErrorDialog error={error} handleError={handleError} /> : null}
     </>
   );
+  console.log('Home rendered');
 
   return viewToRender;
 };
