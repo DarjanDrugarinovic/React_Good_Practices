@@ -4,7 +4,7 @@ import { createGuestAuthentication } from '../infrastructure/repository/user';
 
 export const loadApp = () => async (dispatch, getState) => {
   try {
-    dispatch(loading(true));
+    // dispatch(loading(true));
     // const { token, role } = await createGuestAuthentication();
     // // dispatch(setUser({token, role, loggedIn: false}))
     // console.log(token);
